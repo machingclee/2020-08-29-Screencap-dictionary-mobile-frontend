@@ -20,7 +20,6 @@ export default App = () => {
 
   const restoreUser = async () => {
     const user = await authStorage.getUser();
-
     if (!user) return;
 
     loginAction.updateUser(user);
