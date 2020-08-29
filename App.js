@@ -23,6 +23,7 @@ export default App = () => {
     if (!user) return;
 
     loginAction.updateUser(user);
+
     setUserIsStored(true);
   };
 

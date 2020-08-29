@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Notifications } from "expo";
-import { screencapAPI } from "../api/screencap";
+import React, {useEffect} from "react";
+import {Notifications} from "expo";
+import {screencapAPI} from "../api/screencap";
 import * as Permissions from "expo-permissions";
-import { navigation } from "../navigation/rootNavigation";
+import {navigation} from "../navigation/rootNavigation";
 import useAuth from "./useAuth";
-import { authStorage } from "../persistingData/authStorage";
+import {authStorage} from "../persistingData/authStorage";
 
 export default (notificationListener) => {
-  const { userIsStored } = useAuth();
+  const {userIsStored} = useAuth();
 
   useEffect(() => {
     registerForPushNotifications();
@@ -23,8 +23,8 @@ export default (notificationListener) => {
 
       const pushToken = await Notifications.getExpoPushTokenAsync();
       const user = await authStorage.getUser();
-      if (userIsStored)
-        await screencapAPI.saveToken({ authToken: user.token, pushToken });
+
+      if (userIsStored) await screencapAPI.saveToken({authToken: user.token, pushToken});
     } catch (err) {
       console.log("error getting a push token", err);
     }

@@ -11,6 +11,5 @@ export default {
   setNotes: "SET_NOTES",
   setSearch: "SET_SEARCH",
   updateUser: "UPDATE_USER",
-
-  setJwkToken: "SET_JWT_TOKEN"
+  setJwkToken: "SET_JWT_TOKEN",
 };
